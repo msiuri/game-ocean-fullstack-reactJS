@@ -3,8 +3,8 @@ Criação de mini jogo com score
 
 *Using:
 
-Javascript 
-Next
-Express
-ReactJS
+Javascript;
+Next;
+Express;
+ReactJS;
 
