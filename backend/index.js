@@ -14,8 +14,9 @@ async function main() {
   const client = await MongoClient.connect(url);
   const db = client.db(dbName);
   const collection = db.collection("pontuacoes");
+*/
+
   const app = express();
-  */
 
   console.log("Conectado...");
   app.use(express.json());
