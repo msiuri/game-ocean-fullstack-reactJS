@@ -1,0 +1,7 @@
+{
+  "name": "game-ocean-fullstack-reactjs",
+  "version": "1.0.0",
+  "scripts": {
+    "postinstall": "npm install --prefix backend"
+  }
+}
