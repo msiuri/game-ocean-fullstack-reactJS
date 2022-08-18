@@ -20,6 +20,12 @@ async function main() {
   console.log("Conectado...");
   app.use(express.json());
 
+  //rota default para teste
+
+  app.get("/", function (req, res) {
+    res.send("Hello, World!");
+  });
+
   // [GET] ALL
   app.get("/score", async function (req, res) {
     const item = await collection
