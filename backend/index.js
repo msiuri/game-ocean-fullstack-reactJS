@@ -1,7 +1,7 @@
 const express = require("express");
 const { MongoClient } = require("mongodb");
 
-const url = "mongodb://localhost:27017";
+const url = "mongodb+srv://msiuri:csY5b8cxcyYPD@cluster0.xxbynb6.mongodb.net/";
 const dbName = "fullstack-ocean";
 
 //sinalizar q estamos usando express no body
@@ -9,12 +9,9 @@ const dbName = "fullstack-ocean";
 async function main() {
   console.log("Conectando");
 
-  //banco de dados local
-  /*
   const client = await MongoClient.connect(url);
   const db = client.db(dbName);
   const collection = db.collection("pontuacoes");
-*/
 
   const app = express();
 
