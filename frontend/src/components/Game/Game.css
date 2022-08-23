@@ -1,26 +1,59 @@
 .game {
   background: #9be5e4;
   height: 100vh;
+  overflow: hidden;
+  width: 100%;
+  position: relative;
 }
 .clouds {
   width: 200px;
   position: absolute;
   top: 30px;
-  left: 10%;
+  right: 500px;
+  animation: move-left 4s infinite linear;
+}
+.clouds2 {
+  width: 200px;
+  position: absolute;
+  top: 40px;
+  right: 0%;
+  animation: move-left 4s infinite linear;
 }
 
 .mario {
   width: 140px;
   position: absolute;
-  bottom: 10%;
-  left: 10%;
+  bottom: 30px;
+  left: 50px;
 }
 
+.pipe {
+  width: 80px;
+  position: absolute;
+  bottom: 30px;
+  right: 50px;
+
+  /*
+  animation-name: move-left;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  */
+
+  animation: move-left 2s infinite linear;
+}
+@keyframes move-left {
+  from {
+    right: -200px;
+  }
+  to {
+    right: 100%;
+  }
+}
 .floor {
   background: green;
-
-  height: 150px;
-}
-.pipe {
-  width: 100px;
+  height: 30px;
+  width: 100%;
+  position: absolute;
+  bottom: 1px;
 }

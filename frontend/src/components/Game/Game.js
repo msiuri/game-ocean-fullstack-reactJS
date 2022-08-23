@@ -7,6 +7,7 @@ function Game() {
   return (
     <div className="game">
       <img className="clouds" src={clouds} alt="clouds" />
+      <img className="clouds2" src={clouds} alt="clouds" />
       <img className="mario" src={mario} alt="mario" />
       <img className="pipe" src={pipe} alt="pipe" />
       <div className="floor"></div>
