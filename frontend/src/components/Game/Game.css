@@ -6,5 +6,21 @@
   width: 200px;
   position: absolute;
   top: 30px;
-  left: 50%;
+  left: 10%;
+}
+
+.mario {
+  width: 140px;
+  position: absolute;
+  bottom: 10%;
+  left: 10%;
+}
+
+.floor {
+  background: green;
+
+  height: 150px;
+}
+.pipe {
+  width: 100px;
 }
