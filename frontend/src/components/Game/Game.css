@@ -15,9 +15,9 @@
 .clouds2 {
   width: 200px;
   position: absolute;
-  top: 40px;
+  top: 50px;
   right: 0%;
-  animation: move-left 4s infinite linear;
+  animation: move-left 5s infinite linear;
 }
 
 .mario {
@@ -25,6 +25,17 @@
   position: absolute;
   bottom: 30px;
   left: 50px;
+}
+.mario-jump {
+  animation: mario-jump 0.7s;
+}
+@keyframes mario-jump {
+  from {
+    bottom: 30px;
+  }
+  to {
+    bottom: 150px;
+  }
 }
 
 .pipe {
