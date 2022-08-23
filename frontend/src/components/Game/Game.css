@@ -33,8 +33,11 @@
   from {
     bottom: 30px;
   }
-  to {
+  50% {
     bottom: 150px;
+  }
+  to {
+    bottom: 30px;
   }
 }
 
