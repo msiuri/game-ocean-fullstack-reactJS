@@ -21,7 +21,7 @@
 }
 
 .mario {
-  width: 140px;
+  width: 20%;
   position: absolute;
   bottom: 30px;
   left: 50px;
@@ -47,15 +47,12 @@
   bottom: 30px;
   right: 50px;
 
-  /*
-  animation-name: move-left;
-  animation-duration: 2s;
-  animation-iteration-count: infinite;
-  animation-timing-function: linear;
-  */
-
   animation: move-left 2s infinite linear;
 }
+.stop-animation {
+  animation-play-state: paused;
+}
+
 @keyframes move-left {
   from {
     right: -200px;

@@ -2,12 +2,14 @@ import "./Game.css";
 import clouds from "../../assets/clouds.png";
 import mario from "../../assets/mario.gif";
 import pipe from "../../assets/pipe.png";
-import { useRef, useState } from "react";
+import gameOver from "../../assets/game-over.png";
+import { useEffect, useRef, useState } from "react";
 
-function Game() {
-  console.log("Componente renderizado");
+function Game(props) {
   //Criamos o estado
   const [jumping, setJumping] = useState(false);
+  const [isDead, setIsDead] = useState(false);
+  const [score, setScore] = useState(0);
 
   //Criando as referencias
   const marioRef = useRef();
@@ -27,10 +29,35 @@ function Game() {
     );
   }
 
-  setInterval(() => {
-    const valor = marioIsOnPipe();
-    console.log("mario ta no cano", valor);
-  }, 100);
+  useEffect(
+    function () {
+      const interval = setInterval(() => {
+        if (isDead) {
+          return;
+        }
+        setScore(score + 1);
+      }, 2000);
+      return () => clearInterval(interval);
+    },
+    [isDead, score]
+  );
+
+  useEffect(
+    function () {
+      const interval = setInterval(() => {
+        const isOnPipe = marioIsOnPipe();
+
+        if (!isOnPipe) {
+          return;
+        }
+
+        setIsDead(true);
+        props.onDie();
+      }, 100);
+      return () => clearInterval(interval);
+    },
+    [isDead, props]
+  );
 
   document.onkeydown = function () {
     //alteramos o estado para true
@@ -40,19 +67,28 @@ function Game() {
       setJumping(false);
     }, 700);
   };
+
   let marioClassName = "mario";
 
   if (jumping) {
     marioClassName = "mario mario-jump";
   }
 
-  console.log(15, { jumping });
+  const marioImage = isDead ? gameOver : mario;
+
+  const stop = isDead ? "stop-animation" : "";
 
   return (
     <div className="game">
-      <img className="clouds" src={clouds} alt="clouds" />
-      <img ref={marioRef} className={marioClassName} src={mario} alt="mario" />
-      <img ref={pipeRef} className="pipe" src={pipe} alt="pipe" />
+      <div> {score} </div>
+      <img className={"clouds " + stop} src={clouds} alt="clouds" />
+      <img
+        ref={marioRef}
+        className={marioClassName}
+        src={marioImage}
+        alt="mario"
+      />
+      <img ref={pipeRef} className={"pipe " + stop} src={pipe} alt="pipe" />
       <div className="floor"></div>
     </div>
   );
