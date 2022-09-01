@@ -15,6 +15,8 @@ async function main() {
 
   const app = express();
 
+  app.use(cors());
+
   console.log("Conectado...");
   app.use(express.json());
 

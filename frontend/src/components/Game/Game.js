@@ -36,10 +36,11 @@ function Game(props) {
           return;
         }
         setScore(score + 1);
+        props.onScore(score + 1);
       }, 2000);
       return () => clearInterval(interval);
     },
-    [isDead, score]
+    [isDead, props, score]
   );
 
   useEffect(
@@ -56,7 +57,7 @@ function Game(props) {
       }, 100);
       return () => clearInterval(interval);
     },
-    [isDead, props]
+    [isDead, props, score]
   );
 
   document.onkeydown = function () {

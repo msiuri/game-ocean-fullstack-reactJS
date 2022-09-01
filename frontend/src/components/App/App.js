@@ -5,15 +5,19 @@ import "./App.css";
 
 function App() {
   const [gameOver, setGameOver] = useState(false);
+  const [score, setScore] = useState(0);
 
   function onDie() {
     setGameOver(true);
-    console.log("App > On Die");
+  }
+
+  function onScore(score) {
+    setScore(score);
   }
   return (
     <div className="App">
-      <Game onDie={onDie} />
-      {gameOver && <HighScore />}
+      <Game onDie={onDie} onScore={onScore} />
+      {gameOver && <HighScore score={score} />}
     </div>
   );
 }
