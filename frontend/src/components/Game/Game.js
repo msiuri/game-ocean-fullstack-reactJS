@@ -29,6 +29,8 @@ function Game(props) {
     );
   }
 
+  //useEffect pontos
+
   useEffect(
     function () {
       const interval = setInterval(() => {
@@ -43,6 +45,7 @@ function Game(props) {
     [isDead, props, score]
   );
 
+  //useEffect mario game over
   useEffect(
     function () {
       const interval = setInterval(() => {

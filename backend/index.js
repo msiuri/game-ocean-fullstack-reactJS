@@ -1,5 +1,6 @@
 const express = require("express");
 const { MongoClient } = require("mongodb");
+const cors = require("cors");
 
 const url = "mongodb+srv://msiuri:csY5b8cxcyYPD@cluster0.xxbynb6.mongodb.net/";
 const dbName = "fullstack-ocean";
